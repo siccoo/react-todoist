@@ -19,6 +19,17 @@ class Sidebar extends Component {
                         <span>Next 7 days</span>
                     </li>
                 </ul>
+
+                <div className="sidebar__middle">
+                    <span>
+                        <FaChevronDown />
+                    </span>
+                    <h2>Projects</h2>
+                </div>
+
+                <ul className="sidebar__projects">
+                    Projects will be here!!
+                </ul>
             </div>
         )
     }
