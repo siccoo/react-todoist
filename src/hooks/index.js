@@ -3,7 +3,7 @@ import { firebase } from '../firebase';
 import {moment} from 'moment';
 import {collatedTasksExist } from '../helpers'
 
-const collatedTasks = () => { }
+
 
 export const useTasks = selectedProject => {
     const [tasks, setTasks] = useState([
@@ -14,7 +14,9 @@ export const useTasks = selectedProject => {
 
     useEffect(() => {
         let unsubscribe = firebase
-            .firestore().collection().where('userId', '==', 'jFyKWUiivyasdf123Ytv')
+            .firestore()
+            .collection('tasks')
+            .where('userId', '==', 'jFyKWUiivyasdf123Ytv')
 
         unsubscribe = selectedProject && !collatedTasksExist(selectedProject) ?
             (unsubscribe = unsubscribe.where('projectId', '==', selectedProject))
@@ -41,7 +43,8 @@ export const useTasks = selectedProject => {
                             task.archived !== true
                     )
                     : newTasks.filter(task => task.archived !== true)
-            )
+            );
+            setArchivedTasks(newTasks.filter(task => task.archived !== false));
         })
     }, [selectedProject]);
 };
