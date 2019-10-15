@@ -39,5 +39,5 @@ class Sidebar extends Component {
 // e = element;
 // m = modifier
 
-export default Sidebar
+export default Sidebar;
 
