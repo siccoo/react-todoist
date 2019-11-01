@@ -169,6 +169,42 @@ header {
                     width: 24px;
                 }
             }
+
+            &.settings {
+                grid-area: 1/2;
+                text-align: right;
+
+                ul {
+                    float: right;
+
+                    li {
+                        @include va;
+
+                        list-style-type: none;
+                        cursor: pointer;
+                        width: 30px;
+                        height: 30px;
+                        text-align: middle;
+                        vertical-align: middle;
+                        float: left;
+
+                        &.hover {
+                            border-radius: 3px;
+                            background-color: rgba(255, 255, 255, 0.2);
+                        }
+
+                        &.settings__add {
+                            margin-right: 15px;
+                            font-size: 30px;
+                        }
+
+                        &.settings__dark-mode svg {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
