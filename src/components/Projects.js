@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { useProjectsValue } from '../context';
+import { useProjectsValue,   useSelectedProjectValue } from '../context';
 
 export const Projects = ({ activeValue = null }) => {
     const [active, setActive] = useState(activeValue);
-    const { setSelectedProject } = useSelectedProject();
+    const { setSelectedProject } = useSelectedProjectValue();
     const { projects } = useProjectsValue();
+
+    console.log(projects);
 
     return (
         projects &&
@@ -26,7 +28,7 @@ export const Projects = ({ activeValue = null }) => {
                     setActive(project.projectId);
                     setSelectedProject(project.projectId);
                 }}>
-                Hi, this is the project.
+                {('Project', JSON.stringify(project))};
             </li>
         ))
     )
