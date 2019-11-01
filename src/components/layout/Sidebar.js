@@ -30,6 +30,7 @@ class Sidebar extends Component {
                 <ul className="sidebar__projects">
                     Projects will be here!!
                 </ul>
+                Add Projects Here!!!
             </div>
         )
     }
